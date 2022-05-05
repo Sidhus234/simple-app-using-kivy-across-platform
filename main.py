@@ -26,7 +26,13 @@ class SignUpScreen(Screen):
         # Write back the new user to json
         with open("users.json", "w") as file:
             json.dump(users, file)
-        pass
+        self.manager.current = "sign_up_screen_success"
+
+
+class SignUpScreenSuccess(Screen):
+    def login(self):
+        self.manager.current = "login_screen"
+    pass
 
 
 class MainApp(App):
